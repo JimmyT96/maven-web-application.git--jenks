@@ -16,7 +16,7 @@ node{
  } 
   stage('5deploy_uat'){
     //sh "scp "
-     deploy adapters: [tomcat9(credentialsId: 'Tomcat-credentials', path: '', url: 'http://172.31.8.157:8080/')], contextPath: null, war: 'target/*war'
+     deploy adapters: [tomcat9(credentialsId: 'Tomcat-credentials', path: '', url: 'http://52.69.80.191:8080/')], contextPath: null, war: 'target/*war'
 
   }
  stage('6Approval'){
@@ -25,7 +25,7 @@ node{
     }
  }
  stage('7deploy_prod'){
-     deploy adapters: [tomcat9(credentialsId: 'tomcatCredentials', path: '', url: 'http://172.31.8.157:8080/')], contextPath: null, war: 'target/*war'
+     deploy adapters: [tomcat9(credentialsId: 'tomcatCredentials', path: '', url: 'http://52.69.80.191:8080/')], contextPath: null, war: 'target/*war'
  }
  stage('8Notification'){
     // Pipeline Syntax 
