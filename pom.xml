@@ -102,7 +102,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name> tesla-webapp-snapshots </name>
-	      <url>http://172.31.67.163:8081/repository/tesla-webapp-snapshots/</url>
+	      <url>http://3.235.236.84:8081/repository/tesla-webapp-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
