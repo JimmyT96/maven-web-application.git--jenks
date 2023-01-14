@@ -36,7 +36,7 @@ pipeline{
       }
     }
 }
-
+/*
   post{
     always{
       emailext body: '''Hey guys
@@ -60,4 +60,8 @@ Thanks
 Engineer Jimmy''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'fintech teams'
     }
   } 
+}
+*/
+}
+}
 }
