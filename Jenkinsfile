@@ -23,7 +23,7 @@ pipeline{
         sh "mvn sonar:sonar"
       }
     }
-    
+    /*
     //stage('5uploadNexus'){
      // steps{
      //   sh "mvn deploy"
@@ -36,7 +36,7 @@ pipeline{
       }
     }
 }
-/*
+
   post{
     always{
       emailext body: '''Hey guys
