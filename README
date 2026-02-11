@@ -55,7 +55,9 @@ To compile the code and generate the WAR file locally:
 
 Bash
 
-git clone https://github.com/JimmyT96/maven-web-application.git cd maven-web-application mvn clean package 
+git clone https://github.com/JimmyT96/maven-web-application.git 
+cd maven-web-application
+mvn clean package 
 
 The artifact will be located in the /target directory.
 
