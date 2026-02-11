@@ -1,0 +1,72 @@
+Maven Java Web Application (CI/CD Pipeline)
+
+ Project Overview
+
+This repository contains a Java-based web application managed with Maven. It is designed as a centerpiece for a modern DevOps CI/CD pipeline, demonstrating automated building, testing, containerization, and deployment.
+
+ Tech Stack
+
+Language: Java (JDK 8)
+
+Build Tool: Apache Maven
+
+CI/CD: Jenkins (Pipeline-as-Code)
+
+Containerization: Docker
+
+Artifact Management: SonarQube (Static Analysis)
+
+Deployment: Apache Tomcat / AWS EC2
+
+Key Features
+
+Automated Build: Uses pom.xml to manage dependencies and build the .war artifact.
+
+Jenkins Integration: Multiple Jenkinsfiles (Scripted and Declarative) to handle automated testing and deployment.
+
+Dockerized: Includes a Dockerfile to package the application into a lightweight, portable container.
+
+Financial Mindset: Configured for cost-effective deployment on AWS using optimized EC2 instances
+
+ CI/CD Workflow
+
+Code: Developer pushes changes to GitHub.
+
+Build: Jenkins triggers a build using mvn clean package.
+
+Analyze: Code quality check via SonarQube.
+
+Package: Docker image is built and pushed to Docker Hub.
+
+Deploy: Application is deployed to a Tomcat server or Kubernetes cluster.
+
+
+Prerequisites
+
+Java JDK 8 or higher
+
+Maven 3.8.6
+
+Docker installed (for containerization)
+
+Local Build
+
+To compile the code and generate the WAR file locally:
+
+Bash
+
+git clone https://github.com/JimmyT96/maven-web-application.git cd maven-web-application mvn clean package 
+
+The artifact will be located in the /target directory.
+
+Running with Docker
+
+Bash
+
+docker build -t maven-web-app . docker run -p 8080:8080 maven-web-app 
+
+Author
+
+Jimmy96 T.
+
+BTech in Accounting & DevOps Specialist.
