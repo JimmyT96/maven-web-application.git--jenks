@@ -1,74 +1,56 @@
-Maven Java Web Application (CI/CD Pipeline)
+Maven Java Web App: Production CI/CD Pipeline (2026 Update)
 
- Project Overview
+Project Overview
+This repository contains a high-performance Java web application managed with Maven. Originally established in 2023, it has been modernized for 2026 to serve as a blueprint for Automated DevOps. It demonstrates a "Zero-Touch" workflow from code commit to a containerized deployment on AWS EKS or EC2.
 
-This repository contains a Java-based web application managed with Maven. It is designed as a centerpiece for a modern DevOps CI/CD pipeline, demonstrating automated building, testing, containerization, and deployment.
+Tech Stack (2026 Modernized)
+Language: Java (Updated to JDK 21 LTS for performance and security).
 
- Tech Stack
+Build Tool: Apache Maven 3.9.x.
 
-Language: Java (JDK 8)
+CI/CD: Jenkins (using Declarative Pipelines and shared libraries).
 
-Build Tool: Apache Maven
+Analysis: SonarQube 2026.1 LTA (Featuring AI-driven bug detection).
 
-CI/CD: Jenkins (Pipeline-as-Code)
+Artifacts: Dockerized .war deployment using Tomcat 10.1+ (Jakarta EE compatible).
 
-Containerization: Docker
+Infrastructure: AWS EC2 (T3-Medium optimized) or Amazon EKS.
 
-Artifact Management: SonarQube (Static Analysis)
+CI/CD Workflow
+Commit: Developer pushes to GitHub; Jenkins triggers via webhooks.
 
-Deployment: Apache Tomcat / AWS EC2
+Verify: Maven executes unit tests and generates the artifact (mvn clean package).
 
-Key Features
+Analyze: SonarQube performs SAST (Static Application Security Testing) to catch 2026-critical vulnerabilities.
 
-Automated Build: Uses pom.xml to manage dependencies and build the .war artifact.
+Containerize: Docker builds a lean image using Multi-stage builds to minimize the attack surface.
 
-Jenkins Integration: Multiple Jenkinsfiles (Scripted and Declarative) to handle automated testing and deployment.
+Deploy: The image is pushed to a private registry and deployed via a rolling update.
 
-Dockerized: Includes a Dockerfile to package the application into a lightweight, portable container.
+Getting Started
+1. Prerequisites
+JDK 21 or higher (Java 8 is officially deprecated as of 2026).
 
-Financial Mindset: Configured for cost-effective deployment on AWS using optimized EC2 instances
+Maven 3.9.12 or higher.
 
- CI/CD Workflow
+Docker Desktop (for local testing).
 
-Code: Developer pushes changes to GitHub.
-
-Build: Jenkins triggers a build using mvn clean package.
-
-Analyze: Code quality check via SonarQube.
-
-Package: Docker image is built and pushed to Docker Hub.
-
-Deploy: Application is deployed to a Tomcat server
-
-
-Prerequisites
-
-Java JDK 8 or higher
-
-Maven 3.8.6
-
-Docker installed (for containerization)
-
-Local Build
-
-To compile the code and generate the WAR file locally:
-
+2. Local Build
 Bash
 
 git clone https://github.com/JimmyT96/maven-web-application.git 
 cd maven-web-application
 mvn clean package 
+The optimized .war file will be generated in the /target folder.
 
-The artifact will be located in the /target directory.
-
-Running with Docker
-
+3. Running with Docker
 Bash
 
-docker build -t maven-web-app . docker run -p 8080:8080 maven-web-app 
+# Build the image using the 2026 hardened Dockerfile
+docker build -t maven-web-app:v2 . 
+
+# Run the container (Mapping Port 8080)
+docker run -p 8080:8080 maven-web-app:v2
 
 Author
-
-Jimmy96 T.
-
-BTech in Accounting & DevOps Specialist.
+Jimmy96 T. DevOps & Cloud Architect | BTech in Accounting
