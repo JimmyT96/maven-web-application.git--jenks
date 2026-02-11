@@ -38,7 +38,7 @@ Analyze: Code quality check via SonarQube.
 
 Package: Docker image is built and pushed to Docker Hub.
 
-Deploy: Application is deployed to a Tomcat server or Kubernetes cluster.
+Deploy: Application is deployed to a Tomcat server
 
 
 Prerequisites
