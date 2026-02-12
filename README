@@ -1,18 +1,18 @@
-Maven Java Web App: Production CI/CD Pipeline (2026 Update)
+Maven Java Web App: Production CI/CD Pipeline 
 
 Project Overview
 This repository contains a high-performance Java web application managed with Maven. Originally established in 2023, it has been modernized for 2026 to serve as a blueprint for Automated DevOps. It demonstrates a "Zero-Touch" workflow from code commit to a containerized deployment on AWS EKS or EC2.
 
-Tech Stack (2026 Modernized)
+Tech Stack
 Language: Java (Updated to JDK 21 LTS for performance and security).
 
-Build Tool: Apache Maven 3.9.x.
+Build Tool: Apache Maven 3.9.6
 
-CI/CD: Jenkins (using Declarative Pipelines and shared libraries).
+CI/CD: Jenkins 
 
-Analysis: SonarQube 2026.1 LTA (Featuring AI-driven bug detection).
+Analysis: SonarQube 2026.1 LTA 
 
-Artifacts: Dockerized .war deployment using Tomcat 10.1+ (Jakarta EE compatible).
+Artifacts: Dockerized .war deployment using Tomcat 10.1 (Jakarta EE compatible).
 
 Infrastructure: AWS EC2 (T3-Medium optimized) or Amazon EKS.
 
@@ -29,16 +29,16 @@ Deploy: The image is pushed to a private registry and deployed via a rolling upd
 
 Getting Started
 1. Prerequisites
-JDK 21 or higher (Java 8 is officially deprecated as of 2026).
+JDK 21 
 
-Maven 3.9.12 or higher.
+Maven 3.9.6
 
 Docker Desktop (for local testing).
 
 2. Local Build
 Bash
 
-git clone https://github.com/JimmyT96/maven-web-application.git 
+git clone https://github.com/JimmyT96/maven-web-application.git--jenks
 cd maven-web-application
 mvn clean package 
 The optimized .war file will be generated in the /target folder.
@@ -46,7 +46,7 @@ The optimized .war file will be generated in the /target folder.
 3. Running with Docker
 Bash
 
-# Build the image using the 2026 hardened Dockerfile
+# Build the image using the hardened Dockerfile
 docker build -t maven-web-app:v2 . 
 
 # Run the container (Mapping Port 8080)
