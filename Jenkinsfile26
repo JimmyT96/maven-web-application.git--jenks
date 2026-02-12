@@ -1,0 +1,59 @@
+pipeline {
+    agent any 
+    
+    tools {
+        maven "maven3.9.6" 
+    }  
+    
+    stages {
+        stage('1. Get Code') {
+            steps {
+                echo 'Cloning the modernized 2026 application version...'
+                
+                git credentialsId: 'Githubcredentials', 
+                    url: 'https://github.com/JimmyT96/maven-web-application.git'
+            }
+        }
+
+        stage('2. Build & Test') {
+            steps {
+                echo 'Running JUnit 5 test cases and generating Jakarta-compatible artifact...'
+                
+                sh "mvn clean package"
+            }
+        }
+
+        stage('3. Code Quality') {
+            steps {
+                echo 'Performing AI-enhanced Code Quality Analysis via SonarQube'
+              
+                sh "mvn sonar:sonar"
+            }
+        }
+
+        stage('4. Deploy to Tomcat 10.1') {
+            steps {
+                echo 'Deploying to Tomcat 10.1 via Manager API'
+  
+                withCredentials([usernamePassword(credentialsId: 'Tomcat-credentials', 
+                                                 passwordVariable: 'TOMCAT_PASS', 
+                                                 usernameVariable: 'TOMCAT_USER')]) {
+                    sh """
+                        curl -v -u $TOMCAT_USER:$TOMCAT_PASS \
+                        -T target/*.war \
+                        "http://18.182.36.207:8080/manager/text/deploy?path=/tesla.app&update=true"
+                    """
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Deployment Successful! App is live at http://18.182.36.207:8080/tesla.app'
+        }
+        failure {
+            echo 'Pipeline failed. Check SonarQube or Tomcat logs.'
+        }
+    }
+}
