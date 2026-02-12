@@ -13,7 +13,7 @@
 
 	<properties>
 		<jdk.version>21</jdk.version>
-		<spring.version>6.2.10</spring.version>
+		<spring.version>6.2.11</spring.version>
 		<junit.jupiter.version>5.10.2</junit.jupiter.version>
 		<log4j.version>2.23.1</log4j.version>
 		
